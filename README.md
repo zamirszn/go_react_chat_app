@@ -6,3 +6,10 @@ nvm install --lts
 
 
 cd frontend
+
+[
+    {
+    "key": "down",
+    "command": "-cursorDown"
+}
+]
