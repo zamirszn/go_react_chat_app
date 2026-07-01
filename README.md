@@ -13,3 +13,5 @@ cd frontend
     "command": "-cursorDown"
 }
 ]
+
+ext install dsznajder.es7-react-js-snippets
