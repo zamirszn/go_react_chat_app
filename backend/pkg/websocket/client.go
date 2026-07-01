@@ -20,7 +20,7 @@ type Message struct {
 
 func (c *Client) Read() {
 	defer func() {
-		c.Pool.Unregister <- c
+		c.Pool.UnRegister <- c
 		c.Conn.Close()
 	}()
 
@@ -31,8 +31,8 @@ func (c *Client) Read() {
 			return
 		}
 
-		message := Message{Type: messageType,Body: string(p)}
-		c.Pool.Unregister <- message
+		message := Message{Type: messageType, Body: string(p)}
+		c.Pool.BroadCast <- message
 		fmt.Printf("Message Recieved: %+v\n", message)
 
 	}
